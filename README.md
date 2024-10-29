@@ -33,7 +33,7 @@ React Hook Form significantly reduces the complexity of managing form state and 
 1. Have a button and which triggers a dialog/modal. Inside this there would be a numbered input, a clear and submit button.
 2. on Submit, it adds the pots amount to pots useHookFormValue, which would be an Array.
 3. on Clear, resets the array to an empty []
-4. Visualisation, on the summary page, show these as a straightAnglePiechart [text](https://recharts.org/en-US/examples/StraightAnglePieChart) from recharts.
+4. Visualisation, on the summary page, show these as a [straightAnglePiechart](https://recharts.org/en-US/examples/StraightAnglePieChart) from recharts.
 5. if i had time, allow the user to add a name for these pots.
 6. Stretch goal be able to remove these pots indivdually instead of clear.
 
