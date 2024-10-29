@@ -15,6 +15,8 @@ This project aims to create a responsive and interactive web application with a 
 
 Vite's fast build times and efficient development server allow me to focus on building features without getting bogged down by slow compilation times. Its support for modern JavaScript features means I can leverage the latest advancements in web development.
 
+> **Note:** To run the project, the command is "npm run dev"
+
 ### Framer Motion
 
 Animations are crucial for creating a dynamic user experience. Framer Motion provides a straightforward API for adding animations to components, allowing me to create visually appealing transitions that enhance the overall usability of the application.
