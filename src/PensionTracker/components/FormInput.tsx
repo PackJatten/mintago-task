@@ -16,7 +16,7 @@ const FormInput = (props: TInput) => {
   return (
     <motion.div
       animate={{
-        paddingBottom: errors[name] ? '2rem' : '1.5rem',
+        paddingBottom: errors[name] ? '8px' : '4px',
       }}
       className="w-full px-4 relative"
     >

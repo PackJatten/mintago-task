@@ -17,6 +17,7 @@ const PensionTracker = () => {
         <div className="relative flex flex-col justfy-center">
           {!onSummary && (
             <motion.div
+              data-testid="data-entry-container"
               className="absolute w-full"
               key="data-entry"
               initial="entry"
@@ -25,11 +26,12 @@ const PensionTracker = () => {
               variants={variants}
               transition={{ duration: 0.5 }}
             >
-              <PensionDataEntry calculatePension={() => setOnSummary(true)} />
+              <PensionDataEntry toggleSection={() => setOnSummary(true)} />
             </motion.div>
           )}
           {onSummary && (
             <motion.div
+              data-testid="summary-container"
               className="absolute w-full"
               key="data-summary"
               initial="entry"
@@ -38,7 +40,7 @@ const PensionTracker = () => {
               variants={variants}
               transition={{ duration: 0.5 }}
             >
-              <PensionSummary returnToDataEntry={() => setOnSummary(false)} />
+              <PensionSummary toggleSection={() => setOnSummary(false)} />
             </motion.div>
           )}
         </div>

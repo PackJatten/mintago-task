@@ -1,13 +1,14 @@
 import { useFormContext } from 'react-hook-form';
 import FormInput from '../components/FormInput';
 import { Button } from '@headlessui/react';
+import { TPensionSection } from '../index.types';
 
-const PensionDataEntry = (props) => {
-  const { calculatePension } = props;
+const PensionDataEntry = (props: TPensionSection) => {
+  const { toggleSection } = props;
   const methods = useFormContext();
 
   const onSubmit = () => {
-    calculatePension();
+    toggleSection();
   };
 
   return (
@@ -63,7 +64,7 @@ const PensionDataEntry = (props) => {
           description="Your yearly income (£)"
         />
 
-        <div className="flex flex-col lg:flex-row gap-0 lg:space-x-4">
+        <div className="flex flex-col lg:flex-row gap-4 lg:space-x-4">
           <FormInput
             name="employeeContribution"
             label="Employee Contribution %"

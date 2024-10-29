@@ -3,9 +3,10 @@ import PensionGraph from './PensionGraph';
 import { Button } from '@headlessui/react';
 import { motion } from 'framer-motion';
 import { calculateDesiredPension, calculatePension } from './utils';
+import { TPensionSection } from '../index.types';
 
-const PensionSummary = (props) => {
-  const { returnToDataEntry } = props;
+const PensionSummary = (props: TPensionSection) => {
+  const { toggleSection } = props;
   const { getValues } = useFormContext();
   const { pensionTotal, savingsPerYear, ranOut } =
     calculatePension(getValues());
@@ -52,7 +53,7 @@ const PensionSummary = (props) => {
         <div className="flex justify-between text-sm text-gray-600 border-b pb-2">
           <span>Goal Pension:</span>
           <span className="font-semibold text-indigo-900">
-            £{goalPensionTotal}
+            £{goalPensionTotal.toFixed(2)}
           </span>
         </div>
 
@@ -88,8 +89,8 @@ const PensionSummary = (props) => {
         </div>
 
         <Button
-          onClick={() => returnToDataEntry()}
-          className="mt-6 w-full py-3 px-5 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200"
+          onClick={() => toggleSection()}
+          className="height-max mt-6 w-full py-3 px-5 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200"
         >
           Return to Data Entry
         </Button>

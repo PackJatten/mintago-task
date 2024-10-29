@@ -1,4 +1,5 @@
 import { FieldValues } from 'react-hook-form';
+import { TSavingsYear } from '../index.types';
 
 const age = 25;
 const annualInterestRate = 4.9;
@@ -51,6 +52,8 @@ export const calculatePension = (props: FieldValues) => {
     index++;
   }
 
+  console.log(savingsPerYear.length + 24 !== 81 && savingsPerYear.length + 24);
+
   return {
     pensionTotal,
     savingsPerYear,
@@ -58,14 +61,14 @@ export const calculatePension = (props: FieldValues) => {
   };
 };
 
-export const calculateDesiredPension = (props) => {
+export const calculateDesiredPension = (props: FieldValues) => {
   const { retirementIncome, retirementAge } = props;
   const pensionYears = ageOfDeath - retirementAge;
   const workingYears = retirementAge - age;
 
   const goalPensionTotal = pensionYears * retirementIncome;
 
-  const goalSavingsPerYear: any[] = [{ name: age, value: 0 }];
+  const goalSavingsPerYear: TSavingsYear[] = [{ name: age, value: 0 }];
   let currentValue = 0;
 
   // TODO: factor in inflation to get a curved line
